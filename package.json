@@ -3,10 +3,9 @@
   "version": "0.0.0-development",
   "description": "Utility functions around object paths",
   "main": "lib/index.js",
-  "dependencies": {
-    "js-gardener": "1.27.3"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "js-gardener": "1.27.3",
     "babel-cli": "7.0.0-beta.3",
     "babel-eslint": "8.2.6",
     "babel-plugin-transform-flow-comments": "7.0.0-beta.3",
