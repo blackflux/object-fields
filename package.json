@@ -1,5 +1,5 @@
 {
-  "name": "objectpaths",
+  "name": "obj-paths",
   "version": "0.0.0-development",
   "description": "Utility functions around object paths",
   "main": "lib/index.js",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simlu/objectpaths.git"
+    "url": "git+https://github.com/simlu/obj-paths.git"
   },
   "keywords": [
     "object-path"
@@ -38,9 +38,9 @@
   "author": "Lukas Siemon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simlu/objectpaths/issues"
+    "url": "https://github.com/simlu/obj-paths/issues"
   },
-  "homepage": "https://github.com/simlu/objectpaths#readme",
+  "homepage": "https://github.com/simlu/obj-paths#readme",
   "nyc": {
     "tempDirectory": "./coverage/.nyc_output",
     "report-dir": "./coverage",
@@ -75,7 +75,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/simlu/objectpaths/blob/master/LICENSE"
+      "url": "https://github.com/simlu/obj-paths/blob/master/LICENSE"
     }
   ],
   "engines": {

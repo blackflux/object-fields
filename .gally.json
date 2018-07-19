@@ -2,7 +2,7 @@
   "defaultBranch": "master",
   "contribBranch": "dev",
   "repository": {
-    "url": "https://github.com/simlu/objectpaths.git"
+    "url": "https://github.com/simlu/obj-paths.git"
   },
   "branches": {
     "dev": {
