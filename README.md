@@ -23,5 +23,5 @@ Utility functions around object paths
 const objPaths = require("obj-paths");
 
 objPaths.expand("data(file1,file2)");
-// => [data.file1, data.file2]
+// => ["data.file1", "data.file2"]
 ```
