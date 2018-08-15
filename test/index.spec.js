@@ -4,7 +4,7 @@ const index = require('../src/index');
 
 describe('Testing index.', () => {
   describe('Testing split.', () => {
-    it('Testing de-duplication.', () => {
+    it('Testing de-duplication (split).', () => {
       expect(index.split("data,data")).to.deep.equal(["data"]);
     });
 
@@ -29,7 +29,7 @@ describe('Testing index.', () => {
   });
 
   describe('Testing join.', () => {
-    it('Testing de-duplication.', () => {
+    it('Testing de-duplication (join).', () => {
       expect(index.join(["data", "data"])).to.deep.equal("data");
     });
   });

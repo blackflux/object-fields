@@ -9,7 +9,5 @@ module.exports.split = (input) => {
   return result.filter((item, idx, ar) => ar.indexOf(item) === idx);
 };
 
-module.exports.join = (input) => {
-  // todo: optimize
-  return input.filter((item, idx, ar) => ar.indexOf(item) === idx).join(",");
-};
+module.exports.join = input => input
+  .filter((item, idx, ar) => ar.indexOf(item) === idx).join(",");

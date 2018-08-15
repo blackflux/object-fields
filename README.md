@@ -1,6 +1,6 @@
-[![Build Status](https://img.shields.io/travis/simlu/obj-paths/master.svg)](https://travis-ci.org/simlu/obj-paths)
 [![Test Coverage](https://img.shields.io/coveralls/simlu/obj-paths/master.svg)](https://coveralls.io/github/simlu/obj-paths?branch=master)
 [![Dependencies](https://david-dm.org/simlu/obj-paths/status.svg)](https://david-dm.org/simlu/obj-paths)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=simlu/obj-paths)](https://dependabot.com)[![Greenkeeper Badge](https://badges.greenkeeper.io/simlu/obj-paths.svg)](https://greenkeeper.io/)[![Build Status](https://img.shields.io/travis/simlu/obj-paths/master.svg)](https://travis-ci.org/simlu/obj-paths)
 [![NPM](https://img.shields.io/npm/v/obj-paths.svg)](https://www.npmjs.com/package/obj-paths)
 [![Downloads](https://img.shields.io/npm/dt/obj-paths.svg)](https://www.npmjs.com/package/obj-paths)
 [![Semantic-Release](https://github.com/simlu/js-gardener/blob/master/assets/icons/semver.svg)](https://github.com/semantic-release/semantic-release)
