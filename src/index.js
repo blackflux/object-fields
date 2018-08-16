@@ -9,5 +9,31 @@ module.exports.split = (input) => {
   return result.filter((item, idx, ar) => ar.indexOf(item) === idx);
 };
 
-module.exports.join = input => input
-  .filter((item, idx, ar) => ar.indexOf(item) === idx).join(",");
+const recMerge = input => Object.keys(input)
+  .map((key) => {
+    switch (Object.keys(input[key]).length) {
+      case 0:
+        return key;
+      case 1:
+        return `${key}.${recMerge(input[key])}`;
+      default:
+        return `${key}(${recMerge(input[key])})`;
+    }
+  })
+  .join(",");
+
+module.exports.join = (input) => {
+  const result = {};
+  input
+    .filter((item, idx, ar) => ar.indexOf(item) === idx)
+    .forEach((f) => {
+      let cur = result;
+      f.split(".").forEach((key) => {
+        if (cur[key] === undefined) {
+          cur[key] = {};
+        }
+        cur = cur[key];
+      });
+    });
+  return recMerge(result);
+};
