@@ -25,4 +25,6 @@ objPaths.split("data(file1,file2)");
 // => ["data.file1", "data.file2"]
 objPaths.join(["data", "data"]);
 // => "data"
+objPaths.join(["path.to.thing", "path.to.other.thing"]);
+// => "path.to(thing,other.thing)"
 ```

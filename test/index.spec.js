@@ -31,6 +31,8 @@ describe('Testing index.', () => {
   describe('Testing join.', () => {
     it('Testing de-duplication (join).', () => {
       expect(index.join(["data", "data"])).to.deep.equal("data");
+      expect(index.join(["path.to.thing", "path.to.other.thing"]))
+        .to.deep.equal("path.to(thing,other.thing)");
     });
   });
 });
