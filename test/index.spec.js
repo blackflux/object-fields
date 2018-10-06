@@ -35,4 +35,16 @@ describe('Testing index.', () => {
         .to.deep.equal("path.to(thing,other.thing)");
     });
   });
+
+  describe('Testing getParents', () => {
+    it('Testing basic', () => {
+      expect(index.getParents(["child", "", "parent.child", "grandparent.parent.child"]))
+        .to.deep.equal(['parent', 'grandparent', 'grandparent.parent']);
+    });
+
+    it('Testing de-duplication', () => {
+      expect(index.getParents(["grandparent.parent.child", "grandparent.parent.child"]))
+        .to.deep.equal(['grandparent', 'grandparent.parent']);
+    });
+  });
 });
