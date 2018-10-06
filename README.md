@@ -20,15 +20,15 @@ Utility functions around object paths
 
 <!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
 ```js
-const objPaths = require("obj-paths");
+const objectPaths = require("obj-paths");
 
-objPaths.split("data(file1,file2)");
+objectPaths.split("data(file1,file2)");
 // => ["data.file1", "data.file2"]
-objPaths.join(["data", "data"]);
+objectPaths.join(["data", "data"]);
 // => "data"
-objPaths.join(["path.to.thing", "path.to.other.thing"]);
+objectPaths.join(["path.to.thing", "path.to.other.thing"]);
 // => "path.to(thing,other.thing)"
-objPaths.getParents(["child", "parent.child", "grandparent.parent.child"]);
+objectPaths.getParents(["child", "parent.child", "grandparent.parent.child"]);
 // => ['parent', 'grandparent', 'grandparent.parent']
 ```
 
