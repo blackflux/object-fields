@@ -6,34 +6,34 @@ module.exports.split = (input) => {
     result = result.replace(expander, (m, p1, p2) => p2.split(",").map(e => `${p1}.${e}`).join(','));
   }
   result = result.split(",");
-  return result.filter((item, idx, ar) => ar.indexOf(item) === idx);
+  return [...new Set(result)];
 };
 
-const recMerge = input => Object.keys(input)
-  .map((key) => {
-    switch (Object.keys(input[key]).length) {
+const joinRec = input => Object.entries(input)
+  .map(([key, value]) => {
+    switch (Object.keys(value).length) {
       case 0:
         return key;
       case 1:
-        return `${key}.${recMerge(input[key])}`;
+        return `${key}.${joinRec(value)}`;
       default:
-        return `${key}(${recMerge(input[key])})`;
+        return `${key}(${joinRec(value)})`;
     }
   })
   .join(",");
 
 module.exports.join = (input) => {
   const result = {};
-  input
-    .filter((item, idx, ar) => ar.indexOf(item) === idx)
-    .forEach((f) => {
-      let cur = result;
-      f.split(".").forEach((key) => {
-        if (cur[key] === undefined) {
-          cur[key] = {};
-        }
-        cur = cur[key];
-      });
-    });
-  return recMerge(result);
+  input.forEach(path => path.split(".")
+    .reduce((cur, key) => Object.assign(cur, {
+      [key]: cur[key] || {}
+    })[key], result));
+  return joinRec(result);
 };
+
+module.exports.getParents = input => [...input
+  .reduce((prev, cur) => cur
+    .split("")
+    .map((e, idx) => (e === "." ? idx : -1))
+    .filter(pos => pos !== -1)
+    .reduce((p, c) => p.add(cur.slice(0, c)), prev), new Set())];
