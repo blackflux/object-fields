@@ -9,31 +9,24 @@ module.exports.split = (input) => {
   return result.filter((item, idx, ar) => ar.indexOf(item) === idx);
 };
 
-const recMerge = input => Object.keys(input)
-  .map((key) => {
-    switch (Object.keys(input[key]).length) {
+const recMerge = input => Object.entries(input)
+  .map(([key, value]) => {
+    switch (Object.keys(value).length) {
       case 0:
         return key;
       case 1:
-        return `${key}.${recMerge(input[key])}`;
+        return `${key}.${recMerge(value)}`;
       default:
-        return `${key}(${recMerge(input[key])})`;
+        return `${key}(${recMerge(value)})`;
     }
   })
   .join(",");
 
 module.exports.join = (input) => {
   const result = {};
-  input
-    .filter((item, idx, ar) => ar.indexOf(item) === idx)
-    .forEach((f) => {
-      let cur = result;
-      f.split(".").forEach((key) => {
-        if (cur[key] === undefined) {
-          cur[key] = {};
-        }
-        cur = cur[key];
-      });
-    });
+  input.forEach(path => path.split(".")
+    .reduce((cur, key) => Object.assign(cur, {
+      [key]: cur[key] || {}
+    })[key], result));
   return recMerge(result);
 };
