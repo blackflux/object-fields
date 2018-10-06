@@ -28,4 +28,24 @@ objPaths.join(["data", "data"]);
 // => "data"
 objPaths.join(["path.to.thing", "path.to.other.thing"]);
 // => "path.to(thing,other.thing)"
+objPaths.getParents(["child", "parent.child", "grandparent.parent.child"]);
+// => ['parent', 'grandparent', 'grandparent.parent']
 ```
+
+## Methods
+
+### split
+
+Takes a shortened input string and separates it into an array.
+
+### join
+
+Takes array of selectors and shortens it into a string
+
+### getParents
+
+Takes array of selectors and returns unique, true parents.
+
+## Known Limitations
+
+This package does not currently support escaping.
