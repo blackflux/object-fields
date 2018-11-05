@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
-    "js-gardener": "1.31.7",
+    "js-gardener": "1.32.0",
     "babel-cli": "7.0.0-beta.3",
     "babel-eslint": "10.0.1",
     "babel-plugin-transform-flow-comments": "7.0.0-beta.3",
