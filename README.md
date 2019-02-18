@@ -1,3 +1,5 @@
+# obj-paths
+
 [![Build Status](https://circleci.com/gh/blackflux/obj-paths.png?style=shield)](https://circleci.com/gh/blackflux/obj-paths)
 [![Test Coverage](https://img.shields.io/coveralls/blackflux/obj-paths/master.svg)](https://coveralls.io/github/blackflux/obj-paths?branch=master)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=blackflux/obj-paths)](https://dependabot.com)
@@ -7,8 +9,6 @@
 [![Semantic-Release](https://github.com/blackflux/js-gardener/blob/master/assets/icons/semver.svg)](https://github.com/semantic-release/semantic-release)
 [![Gardener](https://github.com/blackflux/js-gardener/blob/master/assets/badge.svg)](https://github.com/blackflux/js-gardener)
 [![Gitter](https://github.com/blackflux/js-gardener/blob/master/assets/icons/gitter.svg)](https://gitter.im/blackflux/obj-paths)
-
-# obj-paths
 
 Utility functions around object paths
 
@@ -20,15 +20,15 @@ Utility functions around object paths
 
 <!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
 ```js
-const objectPaths = require("obj-paths");
+const objectPaths = require('obj-paths');
 
-objectPaths.split("data(file1,file2)");
+objectPaths.split('data(file1,file2)');
 // => ["data.file1", "data.file2"]
-objectPaths.join(["data", "data"]);
+objectPaths.join(['data', 'data']);
 // => "data"
-objectPaths.join(["path.to.thing", "path.to.other.thing"]);
+objectPaths.join(['path.to.thing', 'path.to.other.thing']);
 // => "path.to(thing,other.thing)"
-objectPaths.getParents(["child", "parent.child", "grandparent.parent.child"]);
+objectPaths.getParents(['child', 'parent.child', 'grandparent.parent.child']);
 // => ['parent', 'grandparent', 'grandparent.parent']
 ```
 
