@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
-    "js-gardener": "1.31.7",
+    "js-gardener": "1.35.0",
     "babel-cli": "7.0.0-beta.3",
     "babel-eslint": "10.0.1",
     "babel-plugin-transform-flow-comments": "7.0.0-beta.3",
@@ -13,8 +13,8 @@
     "babel-register": "7.0.0-beta.3",
     "chai": "4.2.0",
     "coveralls": "3.0.2",
-    "nyc": "13.0.1",
-    "semantic-release": "15.9.17"
+    "nyc": "13.3.0",
+    "semantic-release": "15.13.3"
   },
   "scripts": {
     "test": "npm run clean && npm run gardener && npm run test-simple",
