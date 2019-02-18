@@ -6,15 +6,17 @@
   "dependencies": {},
   "devDependencies": {
     "js-gardener": "1.35.0",
-    "babel-cli": "7.0.0-beta.3",
     "babel-eslint": "10.0.1",
-    "babel-plugin-transform-flow-comments": "7.0.0-beta.3",
-    "babel-preset-flow": "7.0.0-beta.3",
-    "babel-register": "7.0.0-beta.3",
     "chai": "4.2.0",
     "coveralls": "3.0.2",
     "nyc": "13.3.0",
-    "semantic-release": "15.13.3"
+    "semantic-release": "15.13.3",
+    "@babel/register": "7.0.0",
+    "@babel/core": "7.3.3",
+    "@babel/cli": "7.2.3",
+    "@babel/plugin-transform-flow-comments": "7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.3.2",
+    "@babel/preset-flow": "7.0.0"
   },
   "scripts": {
     "test": "npm run clean && npm run gardener && npm run test-simple",
@@ -29,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blackflux/obj-paths.git"
+    "url": "https://github.com/blackflux/obj-paths.git"
   },
   "keywords": [
     "object-path"
@@ -41,7 +43,7 @@
   },
   "homepage": "https://github.com/blackflux/obj-paths#readme",
   "nyc": {
-    "tempDirectory": "./coverage/.nyc_output",
+    "tempDir": "./coverage/.nyc_output",
     "report-dir": "./coverage",
     "check-coverage": true,
     "per-file": false,
@@ -57,7 +59,7 @@
       "text-summary"
     ],
     "require": [
-      "babel-register"
+      "@babel/register"
     ],
     "extension": [],
     "cache": true,
