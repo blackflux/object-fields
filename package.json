@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
-    "js-gardener": "1.37.7",
+    "js-gardener": "1.37.8",
     "babel-eslint": "10.0.1",
     "chai": "4.2.0",
     "coveralls": "3.0.3",
