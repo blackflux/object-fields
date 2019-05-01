@@ -45,6 +45,10 @@ Takes array of selectors and shortens it into a string
 
 Takes array of selectors and returns unique, true parents.
 
+### retain
+
+Takes object and array of selectors. Removes non selected fields from object.
+
 ## Known Limitations
 
 This package does not currently support escaping.

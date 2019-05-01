@@ -1,19 +1,21 @@
 const expect = require('chai').expect;
-const index = require('../src/index');
+const {
+  split, join, getParents, retain
+} = require('../src/index');
 
 
 describe('Testing index.', () => {
   describe('Testing split.', () => {
     it('Testing de-duplication (split).', () => {
-      expect(index.split('data,data')).to.deep.equal(['data']);
+      expect(split('data,data')).to.deep.equal(['data']);
     });
 
     it('Testing simple expand.', () => {
-      expect(index.split('data(file1,file2)')).to.deep.equal(['data.file1', 'data.file2']);
+      expect(split('data(file1,file2)')).to.deep.equal(['data.file1', 'data.file2']);
     });
 
     it('Testing nested expand.', () => {
-      expect(index.split('data(file1,folder1(file2,file3))')).to.deep.equal([
+      expect(split('data(file1,folder1(file2,file3))')).to.deep.equal([
         'data.file1',
         'data.folder1.file2',
         'data.folder1.file3'
@@ -21,7 +23,7 @@ describe('Testing index.', () => {
     });
 
     it('Testing incomplete bracket.', () => {
-      expect(index.split('data(file1,file2')).to.deep.equal([
+      expect(split('data(file1,file2')).to.deep.equal([
         'data(file1',
         'file2'
       ]);
@@ -30,21 +32,41 @@ describe('Testing index.', () => {
 
   describe('Testing join.', () => {
     it('Testing de-duplication (join).', () => {
-      expect(index.join(['data', 'data'])).to.deep.equal('data');
-      expect(index.join(['path.to.thing', 'path.to.other.thing']))
+      expect(join(['data', 'data'])).to.deep.equal('data');
+      expect(join(['path.to.thing', 'path.to.other.thing']))
         .to.deep.equal('path.to(thing,other.thing)');
     });
   });
 
   describe('Testing getParents', () => {
     it('Testing basic', () => {
-      expect(index.getParents(['child', '', 'parent.child', 'grandparent.parent.child']))
+      expect(getParents(['child', '', 'parent.child', 'grandparent.parent.child']))
         .to.deep.equal(['parent', 'grandparent', 'grandparent.parent']);
     });
 
     it('Testing de-duplication', () => {
-      expect(index.getParents(['grandparent.parent.child', 'grandparent.parent.child']))
+      expect(getParents(['grandparent.parent.child', 'grandparent.parent.child']))
         .to.deep.equal(['grandparent', 'grandparent.parent']);
+    });
+  });
+
+  describe('Testing retain.', () => {
+    it('Testing top level retain.', () => {
+      const data = { id: 1, name: 'a' };
+      expect(retain(data, ['name'])).to.equal(undefined);
+      expect(data).to.deep.equal({ name: 'a' });
+    });
+
+    it('Testing nested level retain.', () => {
+      const data = { id: 1, arr: [{ arr: [{ id: 1, name: 'a' }] }] };
+      expect(retain(data, ['arr.arr.name'])).to.equal(undefined);
+      expect(data).to.deep.equal({ arr: [{ arr: [{ name: 'a' }] }] });
+    });
+
+    it('Testing array filter.', () => {
+      const data = [{ name: [] }];
+      expect(retain(data, [])).to.equal(undefined);
+      expect(data).to.deep.equal([]);
     });
   });
 });

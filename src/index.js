@@ -1,7 +1,9 @@
+const objectScan = require('object-scan');
+
 const expander = /([^,()]*?)\(([^()]*?)\)/;
 
-module.exports.split = (input) => {
-  let result = input;
+module.exports.split = (fields) => {
+  let result = fields;
   while (result.match(expander)) {
     result = result.replace(expander, (m, p1, p2) => p2.split(',').map(e => `${p1}.${e}`).join(','));
   }
@@ -22,18 +24,43 @@ const joinRec = input => Object.entries(input)
   })
   .join(',');
 
-module.exports.join = (input) => {
+module.exports.join = (fields) => {
   const result = {};
-  input.forEach(path => path.split('.')
+  fields.forEach(path => path.split('.')
     .reduce((cur, key) => Object.assign(cur, {
       [key]: cur[key] || {}
     })[key], result));
   return joinRec(result);
 };
 
-module.exports.getParents = input => [...input
+module.exports.getParents = fields => [...fields
   .reduce((prev, cur) => cur
     .split('')
     .map((e, idx) => (e === '.' ? idx : -1))
     .filter(pos => pos !== -1)
     .reduce((p, c) => p.add(cur.slice(0, c)), prev), new Set())];
+
+module.exports.retain = (obj, fields) => {
+  objectScan(['**'].concat(fields), {
+    useArraySelector: false,
+    joined: false,
+    breakFn: (key, value, { traversedBy, matchedBy }) => {
+      if (matchedBy.length > 1) {
+        // matched by '**' and another needle => keep and break
+        return true;
+      }
+      if (traversedBy.length === 1) {
+        // traversed by only '**' => delete and break
+        const directParent = key.slice(0, -1).reduce((p, k) => p[k], obj);
+        if (Array.isArray(directParent)) {
+          directParent.splice(key[key.length - 1], 1);
+        } else {
+          delete directParent[key[key.length - 1]];
+        }
+        return true;
+      }
+      // look further
+      return false;
+    }
+  })(obj);
+};
