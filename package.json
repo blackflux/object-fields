@@ -4,7 +4,7 @@
   "description": "Utility functions around object paths",
   "main": "lib/index.js",
   "dependencies": {
-    "object-scan": "9.0.3"
+    "object-scan": "10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
