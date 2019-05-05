@@ -68,5 +68,11 @@ describe('Testing index.', () => {
       expect(retain(data, [])).to.equal(undefined);
       expect(data).to.deep.equal([]);
     });
+
+    it('Testing readme example', () => {
+      const data = [{ id: 1, name: 'one' }, { id: 2, name: 'two' }];
+      retain(data, ['name']);
+      expect(data).to.deep.equal([{ name: 'one' }, { name: 'two' }]);
+    });
   });
 });
