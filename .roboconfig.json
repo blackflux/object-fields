@@ -4,9 +4,9 @@
       "assorted/@npm-opensource"
     ],
     "variables": {
-      "repoKey": "blackflux/obj-paths",
-      "packageName": "obj-paths",
-      "projectName": "obj-paths",
+      "repoKey": "blackflux/object-fields",
+      "packageName": "object-fields",
+      "projectName": "object-fields",
       "owner": "simlu",
       "ownerName": "Lukas Siemon",
       "mergeBot": "MrsFlux"
