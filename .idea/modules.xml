@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/obj-paths.iml" filepath="$PROJECT_DIR$/.idea/obj-paths.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/object-fields.iml" filepath="$PROJECT_DIR$/.idea/object-fields.iml" />
     </modules>
   </component>
 </project>

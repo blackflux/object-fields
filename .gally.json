@@ -2,7 +2,7 @@
   "defaultBranch": "master",
   "contribBranch": "dev",
   "repository": {
-    "url": "https://github.com/blackflux/obj-paths.git"
+    "url": "https://github.com/blackflux/object-fields.git"
   },
   "branches": {
     "dev": {
