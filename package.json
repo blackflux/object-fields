@@ -1,5 +1,5 @@
 {
-  "name": "obj-paths",
+  "name": "object-fields",
   "version": "0.0.0-development",
   "description": "Utility functions around object paths",
   "main": "lib/index.js",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blackflux/obj-paths.git"
+    "url": "https://github.com/blackflux/object-fields.git"
   },
   "keywords": [
     "object-path"
@@ -41,9 +41,9 @@
   "author": "Lukas Siemon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blackflux/obj-paths/issues"
+    "url": "https://github.com/blackflux/object-fields/issues"
   },
-  "homepage": "https://github.com/blackflux/obj-paths#readme",
+  "homepage": "https://github.com/blackflux/object-fields#readme",
   "nyc": {
     "tempDir": "./coverage/.nyc_output",
     "report-dir": "./coverage",
@@ -77,7 +77,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/blackflux/obj-paths/blob/master/LICENSE"
+      "url": "https://github.com/blackflux/object-fields/blob/master/LICENSE"
     }
   ],
   "engines": {
