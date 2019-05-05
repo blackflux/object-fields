@@ -31,7 +31,7 @@ objectFields.getParents(['child', 'parent.child', 'grandparent.parent.child']);
 // => ['parent', 'grandparent', 'grandparent.parent']
 
 const data = [{ id: 1, name: 'one' }, { id: 2, name: 'two' }];
-objectFields.retain(data, ['name']); // updated data in place
+objectFields.retain(data, ['name']); // updates data in place
 // data => [{ name: 'one' }, { name: 'two' }]
 ```
 
