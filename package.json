@@ -1,7 +1,7 @@
 {
   "name": "object-fields",
   "version": "0.0.0-development",
-  "description": "Utility functions around object paths",
+  "description": "Utility functions around nested object fields",
   "main": "lib/index.js",
   "dependencies": {
     "object-scan": "10.0.0"
