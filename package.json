@@ -3,14 +3,16 @@
   "version": "0.0.0-development",
   "description": "Utility functions around nested object fields",
   "main": "lib/index.js",
-  "dependencies": {"object-scan": "10.0.5"},
+  "dependencies": {
+    "object-scan": "10.0.5"
+  },
   "devDependencies": {
     "@babel/cli": "7.5.5",
     "@babel/core": "7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "7.5.5",
     "@babel/register": "7.5.5",
-    "@blackflux/eslint-plugin-rules": "1.0.26",
-    "@blackflux/robo-config-plugin": "2.2.3",
+    "@blackflux/eslint-plugin-rules": "1.1.0",
+    "@blackflux/robo-config-plugin": "2.3.0",
     "babel-eslint": "10.0.2",
     "chai": "4.2.0",
     "coveralls": "3.0.5",
@@ -39,10 +41,14 @@
     "type": "git",
     "url": "https://github.com/blackflux/object-fields.git"
   },
-  "keywords": ["object-path"],
+  "keywords": [
+    "object-path"
+  ],
   "author": "Lukas Siemon",
   "license": "MIT",
-  "bugs": {"url": "https://github.com/blackflux/object-fields/issues"},
+  "bugs": {
+    "url": "https://github.com/blackflux/object-fields/issues"
+  },
   "homepage": "https://github.com/blackflux/object-fields#readme",
   "nyc": {
     "tempDir": "./coverage/.nyc_output",
@@ -53,14 +59,26 @@
     "statements": 100,
     "functions": 100,
     "branches": 100,
-    "include": ["**/*.js"],
-    "reporter": ["lcov", "text-summary"],
-    "require": ["@babel/register"],
+    "include": [
+      "**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "require": [
+      "@babel/register"
+    ],
     "extension": [],
     "cache": true,
     "all": true,
     "babel": true,
-    "exclude": ["gardener.js", "node_modules/*", "coverage/*", "lib/*"]
+    "exclude": [
+      "gardener.js",
+      "node_modules/*",
+      "coverage/*",
+      "lib/*"
+    ]
   },
   "licenses": [
     {
@@ -68,7 +86,11 @@
       "url": "https://github.com/blackflux/object-fields/blob/master/LICENSE"
     }
   ],
-  "engines": {"node": ">= 8.10"},
-  "files": ["lib"],
+  "engines": {
+    "node": ">= 8.10"
+  },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {}
 }
