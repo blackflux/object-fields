@@ -5,13 +5,13 @@ const expander = /([^,()]*?)\(([^()]*?)\)/;
 module.exports.split = (fields) => {
   let result = fields;
   while (result.match(expander)) {
-    result = result.replace(expander, (m, p1, p2) => p2.split(',').map(e => `${p1}.${e}`).join(','));
+    result = result.replace(expander, (m, p1, p2) => p2.split(',').map((e) => `${p1}.${e}`).join(','));
   }
   result = result.split(',');
   return [...new Set(result)];
 };
 
-const joinRec = input => Object.entries(input)
+const joinRec = (input) => Object.entries(input)
   .map(([key, value]) => {
     switch (Object.keys(value).length) {
       case 0:
@@ -26,18 +26,18 @@ const joinRec = input => Object.entries(input)
 
 module.exports.join = (fields) => {
   const result = {};
-  fields.forEach(path => path.split('.')
+  fields.forEach((path) => path.split('.')
     .reduce((cur, key) => Object.assign(cur, {
       [key]: cur[key] || {}
     })[key], result));
   return joinRec(result);
 };
 
-module.exports.getParents = fields => [...fields
+module.exports.getParents = (fields) => [...fields
   .reduce((prev, cur) => cur
     .split('')
     .map((e, idx) => (e === '.' ? idx : -1))
-    .filter(pos => pos !== -1)
+    .filter((pos) => pos !== -1)
     .reduce((p, c) => p.add(cur.slice(0, c)), prev), new Set())];
 
 module.exports.retain = (obj, fields) => {
