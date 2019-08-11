@@ -175,10 +175,10 @@
   dependencies:
     smart-fs "1.9.2"
 
-"@blackflux/robo-config-plugin@2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.4.3.tgz#f1453ab8a575c9574cba1263a1c3cddcdd12ce36"
-  integrity sha512-DQU+vmV+0IQ+XsYB+FQZiv18hfrX+mU6gHmO76bb9SfUc2uoN5TVtCNb7+ylFjht5yp72ZUyKz7luk4WPocwPQ==
+"@blackflux/robo-config-plugin@2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-2.4.4.tgz#af85de73343ff6e1b5c3409a994e139c77bb4145"
+  integrity sha512-lJXhk/BvcH6xyD0+l3OrH+8vKUMKu1kVDSYxDOln/K6fZwdSGyUYwhh2lFVNvtEYXoqjt34GV9kDrcGS7veKVg==
 
 "@hapi/address@2.x.x":
   version "2.0.0"
@@ -3554,10 +3554,10 @@ joi-strict@1.0.4:
   resolved "https://registry.yarnpkg.com/joi-strict/-/joi-strict-1.0.4.tgz#8bf55f7b4d6accd5b530ac98276131b59e982254"
   integrity sha512-ChSFFa+Z3iD9x9QsBFMEHwXrwt2Gq2OD1fg+Mgje1Tx+Pqt7ma+LXgMdzVoC7GHCxhO3ySDVBtDumES/yycMXg==
 
-js-gardener@2.0.59:
-  version "2.0.59"
-  resolved "https://registry.yarnpkg.com/js-gardener/-/js-gardener-2.0.59.tgz#d4f0ecdfb387403b4fc4e4ee0aa956be1ea0b29e"
-  integrity sha512-cRFWSkHQ/bs5VmEVPkjOKU2oaFd7ynuKC37jeN9vwzYP4lDbJI9pC7gHv4T9j2gqiKw8g7nWPncgle4haA6wHQ==
+js-gardener@2.0.60:
+  version "2.0.60"
+  resolved "https://registry.yarnpkg.com/js-gardener/-/js-gardener-2.0.60.tgz#5bf43234a2bc31e491222a88e3804f4b56bcd0f3"
+  integrity sha512-BQBrqypnvIdQ/exF+gUgHESsahR8DKciEMGZz3yJ6xcv/c3dvruhKIE+CT5QQr2/B9e3EoB/jRCDQq3o2AX1nA==
   dependencies:
     "@hapi/joi" "15.1.0"
     chalk "2.4.2"
@@ -4978,6 +4978,11 @@ object-scan@10.0.6:
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/object-scan/-/object-scan-10.0.6.tgz#dc3846b3774ae7a6b5889aa9a6f73134fbd333a6"
   integrity sha512-0SnIzQ+JsR7v0GFnedNZ/nnhv1OU3iVLParKeU4r3yBz/+NOuloAyygCwSQOJmlngW14XB+KHlHYhLrdZq5XNQ==
+
+object-scan@10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/object-scan/-/object-scan-10.0.7.tgz#6e9754b6b6bf1ebd0d64e82d4e83d4c6c669f224"
+  integrity sha512-psXbwbPtXbHeW5xd/tW9j7WAvYPuedVwwnbhMUjqRf0LKqxK5lTr9xDJwYtcAng96zu0+HQEpaiJ/mlUW+KZsg==
 
 object-treeify@1.1.14:
   version "1.1.14"
