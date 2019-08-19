@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Utility functions around nested object fields",
   "main": "lib/index.js",
-  "dependencies": {"object-scan": "10.0.8"},
+  "dependencies": {"object-scan": "10.0.9"},
   "devDependencies": {
     "@babel/cli": "7.5.5",
     "@babel/core": "7.5.5",
