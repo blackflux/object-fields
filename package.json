@@ -7,7 +7,7 @@
     "object-scan": "10.0.15"
   },
   "devDependencies": {
-    "@babel/cli": "7.7.5",
+    "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
     "@babel/plugin-proposal-object-rest-spread": "7.7.7",
     "@babel/register": "7.7.7",
