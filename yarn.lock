@@ -179,10 +179,10 @@
   dependencies:
     smart-fs "1.11.5"
 
-"@blackflux/robo-config-plugin@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-3.0.4.tgz#eca21e6d07e494073ca8fb3a2ffac9ec14a7634b"
-  integrity sha512-jggX+YF/p19xCnFamBHJTZlAErOopjb3nblvhH4/IcrLq22YUP5ndUBl8NvmVytNus/nQA9YZjExB7npybl9Pw==
+"@blackflux/robo-config-plugin@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@blackflux/robo-config-plugin/-/robo-config-plugin-3.0.5.tgz#826dc7d8304fd28bf8c143785bc7bfe7b7a5f1a9"
+  integrity sha512-P0sf5gq7fbBr+5qW4BIFc5KGjFhq8VV+mUoiolFxFvOaeq9uCGnr4zX3z+7YfwBrqOv14LDfSKsY2uSfsLuNTw==
 
 "@hapi/address@^2.1.2":
   version "2.1.2"
@@ -5190,6 +5190,11 @@ object-scan@10.0.15:
   version "10.0.15"
   resolved "https://registry.yarnpkg.com/object-scan/-/object-scan-10.0.15.tgz#c0b4481081317be281d5b2c10e308de0af9cd5f6"
   integrity sha512-zPu1SctWM6qGf09mwLffRNpgmKZ7kjPGWwNuqYMooXS00Iu3eQiA8833MlNSkp/f6TJhjcBfZCrTO+XZ2yBIWg==
+
+object-scan@10.0.16:
+  version "10.0.16"
+  resolved "https://registry.yarnpkg.com/object-scan/-/object-scan-10.0.16.tgz#b0f9c5de3afd2bc17144ef540ab8c23e79e7b778"
+  integrity sha512-uvm6lSG0BEc1cAfRx+v+htxwJ3Wlebw6vzxU3srt4M3MA9LuzAAHuIgk1utwYtlTN73p3wa2t22k9KhWnqIZXQ==
 
 object-treeify@1.1.22:
   version "1.1.22"
