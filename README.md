@@ -52,7 +52,7 @@ Takes array of selectors and returns unique, true parents.
 
 ### Retainer
 
-Takes array of selectors and return retain function. The retain function takes an object and removes non selected fields it.
+Takes array of selectors and returns retain function. The retain function takes an object and removes non selected fields it.
 
 ## Known Limitations
 
