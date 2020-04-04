@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const {
-  split, join, getParents, retain
+  split, join, getParents, Retainer
 } = require('../src/index');
 
 
@@ -50,28 +50,28 @@ describe('Testing index.', () => {
     });
   });
 
-  describe('Testing retain.', () => {
+  describe('Testing Retainer.', () => {
     it('Testing top level retain.', () => {
       const data = { id: 1, name: 'a' };
-      expect(retain(data, ['name'])).to.equal(undefined);
+      expect(Retainer(['name'])(data)).to.equal(undefined);
       expect(data).to.deep.equal({ name: 'a' });
     });
 
     it('Testing nested level retain.', () => {
       const data = { id: 1, arr: [{ arr: [{ id: 1, name: 'a' }] }] };
-      expect(retain(data, ['arr.arr.name'])).to.equal(undefined);
+      expect(Retainer(['arr.arr.name'])(data)).to.equal(undefined);
       expect(data).to.deep.equal({ arr: [{ arr: [{ name: 'a' }] }] });
     });
 
     it('Testing array filter.', () => {
       const data = [{ name: [] }];
-      expect(retain(data, [])).to.equal(undefined);
+      expect(Retainer([])(data)).to.equal(undefined);
       expect(data).to.deep.equal([]);
     });
 
     it('Testing readme example', () => {
       const data = [{ id: 1, name: 'one' }, { id: 2, name: 'two' }];
-      retain(data, ['name']);
+      Retainer(['name'])(data);
       expect(data).to.deep.equal([{ name: 'one' }, { name: 'two' }]);
     });
   });

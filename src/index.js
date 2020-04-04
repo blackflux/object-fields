@@ -40,18 +40,19 @@ module.exports.getParents = (fields) => [...fields
     .filter((pos) => pos !== -1)
     .reduce((p, c) => p.add(cur.slice(0, c)), prev), new Set())];
 
-module.exports.retain = (obj, fields) => {
-  objectScan(['**'].concat(fields), {
+module.exports.Retainer = (fields) => {
+  const retainer = objectScan(['**'].concat(fields), {
     useArraySelector: false,
     joined: false,
-    breakFn: (key, value, { traversedBy, matchedBy }) => {
+    breakFn: (key, value, { traversedBy, matchedBy, context }) => {
       if (matchedBy.length > 1) {
         // matched by '**' and another needle => keep and break
         return true;
       }
       if (traversedBy.length === 1) {
         // traversed by only '**' => delete and break
-        const directParent = key.slice(0, -1).reduce((p, k) => p[k], obj);
+        const directParent = key.slice(0, -1)
+          .reduce((p, k) => p[k], context.obj);
         if (Array.isArray(directParent)) {
           directParent.splice(key[key.length - 1], 1);
         } else {
@@ -62,5 +63,8 @@ module.exports.retain = (obj, fields) => {
       // look further
       return false;
     }
-  })(obj);
+  });
+  return (obj) => {
+    retainer(obj, { obj });
+  };
 };

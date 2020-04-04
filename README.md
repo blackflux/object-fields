@@ -31,7 +31,8 @@ objectFields.getParents(['child', 'parent.child', 'grandparent.parent.child']);
 // => ['parent', 'grandparent', 'grandparent.parent']
 
 const data = [{ id: 1, name: 'one' }, { id: 2, name: 'two' }];
-objectFields.retain(data, ['name']); // updates data in place
+const retain = objectFields.Retainer(['name']);
+retain(data); // updates data in place
 // data => [{ name: 'one' }, { name: 'two' }]
 ```
 
@@ -49,9 +50,9 @@ Takes array of selectors and shortens it into a string
 
 Takes array of selectors and returns unique, true parents.
 
-### retain
+### Retainer
 
-Takes object and array of selectors. Removes non selected fields from object.
+Takes array of selectors and return retain function. The retain function takes an object and removes non selected fields it.
 
 ## Known Limitations
 
