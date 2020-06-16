@@ -3,7 +3,6 @@ const {
   split, join, getParents, Retainer
 } = require('../src/index');
 
-
 describe('Testing index.', () => {
   describe('Testing split.', () => {
     it('Testing de-duplication (split).', () => {
