@@ -42,25 +42,25 @@ module.exports.getParents = (fields) => [...fields
 
 module.exports.Retainer = (fields) => {
   const retainer = objectScan(['**'].concat(fields), {
+    rtn: 'count',
     useArraySelector: false,
-    joined: false,
     breakFn: ({
-      getKey, getTraversedBy, matchedBy, context
+      parent, property, getMatchedBy, getTraversedBy
     }) => {
-      if (matchedBy.length > 1) {
+      if (parent === undefined) {
+        return false;
+      }
+      if (getMatchedBy().length > 1) {
         // matched by '**' and another needle => keep and break
         return true;
       }
-      const traversedBy = getTraversedBy();
-      if (traversedBy.length === 1) {
-        const key = getKey();
+      if (getTraversedBy().length === 1) {
         // traversed by only '**' => delete and break
-        const directParent = key.slice(0, -1)
-          .reduce((p, k) => p[k], context.obj);
-        if (Array.isArray(directParent)) {
-          directParent.splice(key[key.length - 1], 1);
+        if (Array.isArray(parent)) {
+          parent.splice(property, 1);
         } else {
-          delete directParent[key[key.length - 1]];
+          // eslint-disable-next-line no-param-reassign
+          delete parent[property];
         }
         return true;
       }
@@ -69,6 +69,6 @@ module.exports.Retainer = (fields) => {
     }
   });
   return (obj) => {
-    retainer(obj, { obj });
+    retainer(obj);
   };
 };
