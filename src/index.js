@@ -44,9 +44,15 @@ module.exports.Retainer = (fields) => {
   const retainer = objectScan(['**'].concat(fields), {
     rtn: 'count',
     useArraySelector: false,
-    breakFn: ({ parent, property, getTraversedBy }) => {
+    breakFn: ({
+      parent, property, getMatchedBy, getTraversedBy
+    }) => {
       if (parent === undefined) {
         return false;
+      }
+      if (getMatchedBy().length > 1) {
+        // matched by '**' and another needle => keep and break
+        return true;
       }
       if (getTraversedBy().length === 1) {
         // traversed by only '**' => delete and break
