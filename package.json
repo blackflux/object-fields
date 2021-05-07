@@ -4,7 +4,7 @@
   "description": "Utility functions around nested object fields",
   "main": "lib/index.js",
   "dependencies": {
-    "object-scan": "14.3.2"
+    "object-scan": "14.4.0"
   },
   "devDependencies": {
     "@babel/cli": "7.13.16",
