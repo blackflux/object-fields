@@ -1,7 +1,8 @@
-const expect = require('chai').expect;
-const {
+import { expect } from 'chai';
+
+import {
   split, join, getParents, Retainer
-} = require('../src/index');
+} from '../src/index.js';
 
 describe('Testing index.', () => {
   describe('Testing split.', () => {
