@@ -19,19 +19,21 @@ Utility functions around object paths
 
 <!-- eslint-disable import/no-unresolved, import/no-extraneous-dependencies -->
 ```js
-const objectFields = require('object-fields');
+import {
+  split, join, getParents, Retainer
+} from 'object-fields';
 
-objectFields.split('data(file1,file2)');
+split('data(file1,file2)');
 // => ["data.file1", "data.file2"]
-objectFields.join(['data', 'data']);
+join(['data', 'data']);
 // => "data"
-objectFields.join(['path.to.thing', 'path.to.other.thing']);
+join(['path.to.thing', 'path.to.other.thing']);
 // => "path.to(thing,other.thing)"
-objectFields.getParents(['child', 'parent.child', 'grandparent.parent.child']);
+getParents(['child', 'parent.child', 'grandparent.parent.child']);
 // => ['parent', 'grandparent', 'grandparent.parent']
 
 const data = [{ id: 1, name: 'one' }, { id: 2, name: 'two' }];
-const retain = objectFields.Retainer(['name']);
+const retain = Retainer(['name']);
 retain(data); // updates data in place
 // data => [{ name: 'one' }, { name: 'two' }]
 ```

@@ -1,8 +1,8 @@
-const objectScan = require('object-scan');
+import objectScan from 'object-scan';
 
 const expander = /([^,()]*?)\(([^()]*?)\)/;
 
-module.exports.split = (fields) => {
+export const split = (fields) => {
   let result = fields;
   while (result.match(expander)) {
     result = result.replace(expander, (m, p1, p2) => p2.split(',').map((e) => `${p1}.${e}`).join(','));
@@ -24,7 +24,7 @@ const joinRec = (input) => Object.entries(input)
   })
   .join(',');
 
-module.exports.join = (fields) => {
+export const join = (fields) => {
   const result = {};
   fields.forEach((path) => path.split('.')
     .reduce((cur, key) => Object.assign(cur, {
@@ -33,14 +33,14 @@ module.exports.join = (fields) => {
   return joinRec(result);
 };
 
-module.exports.getParents = (fields) => [...fields
+export const getParents = (fields) => [...fields
   .reduce((prev, cur) => cur
     .split('')
     .map((e, idx) => (e === '.' ? idx : -1))
     .filter((pos) => pos !== -1)
     .reduce((p, c) => p.add(cur.slice(0, c)), prev), new Set())];
 
-module.exports.Retainer = (fields) => {
+export const Retainer = (fields) => {
   const retainer = objectScan(['**'].concat(fields), {
     rtn: 'count',
     useArraySelector: false,
